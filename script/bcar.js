@@ -100,6 +100,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                         || ((Player.BCAR.bcarSettings.animationButtonsPosition === "lowerright")
                             && ((MouseX >= 955) && (MouseX < 1005) && (MouseY >= 860) && (MouseY < 905))))
                       {
+                        if (Player.BCAR.bcarSettings.genderDefault.Gender == "Female" ||Player.BCAR.bcarSettings.genderDefault.Gender == "Male"){
+                            BCARTriggerEarWiggleAction()
+                        } else {
                         ServerSend("ChatRoomChat", {
                                 Content: "Beep",
                                 Type: "Action",
@@ -110,16 +113,11 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                     { Tag: "Sonner", Text: "msg" },
                                     { Tag: "msg", Text: CharacterNickname(Player) + " wiggles " + Player.BCAR.bcarSettings.genderDefault.capPossessive.toLocaleLowerCase() + " ears." }
                                 ]
-                            });
-                            EarWiggle();
-                            return;
-                    /**
-                    {
-                        BCARTriggerEarWiggleAction()
+                            }); 
+                        }
                         EarWiggle();
                         return;
-                    }
-                      */
+
                     }
                 }
             }
